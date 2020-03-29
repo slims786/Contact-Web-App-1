@@ -1,0 +1,40 @@
+#configure server port
+server:
+  port: 8081
+
+#datasource property
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: scott
+    password: tiger
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+ 
+#orm properties
+  jpa:
+    properties:
+      hibernate:
+       show_sql: true
+       format_sql: true
+       dialect: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: update
+ #mvc properties
+  mvc:
+    view:
+      prefix: /view/
+      suffix: .jsp
+      
+#logging configuration
+#debug: true
+
+logging:
+  level:
+    org.springframework: info
+    com.contact: debug
+  file:
+    name: E:\\logs\\Contact-web-App-1.log
+  pattern:
+    console:
+     Logging pattern for file
+    file: d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg% 
