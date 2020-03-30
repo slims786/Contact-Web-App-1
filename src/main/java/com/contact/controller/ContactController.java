@@ -30,10 +30,12 @@ public class ContactController {
 	@RequestMapping(value = "/displayForm")
 	
 	public String init(Model model) {
+		System.out.println("Init method started");
 		logger.debug(AppConstant.Method_Started_str);
 		ContactModel contact = new ContactModel();
 		model.addAttribute(AppConstant.Contact_str, contact);
 		logger.info(AppConstant.Method_ended_str);
+		System.out.println("Init method ended");
 		return  AppConstant.Contact_str;
 	}
 	
